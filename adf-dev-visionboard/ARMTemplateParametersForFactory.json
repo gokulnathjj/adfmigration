@@ -1,0 +1,102 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-dev-visionboard"
+		},
+		"DS_OUTPUT_password": {
+			"value": ""
+		},
+		"DS_SQL_ADLS_accountKey": {
+			"value": ""
+		},
+		"DS_SQL_ADLSS_accountKey": {
+			"value": ""
+		},
+		"DS_STORED_PROCEDURE_password": {
+			"value": ""
+		},
+		"LS_CPY_SQL_ADLS_password": {
+			"value": ""
+		},
+		"LS_DEL_LOGS_connectionString": {
+			"value": ""
+		},
+		"LS_DS_DES_accountKey": {
+			"value": ""
+		},
+		"LS_DS_DES_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_DS_PYMUL_accountKey": {
+			"value": ""
+		},
+		"LS_DS_SRC_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_RESTAPI_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_SQLSERVERR_password": {
+			"value": ""
+		},
+		"DS_OUTPUT_properties_typeProperties_server": {
+			"value": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"DS_OUTPUT_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"DS_OUTPUT_properties_typeProperties_userName": {
+			"value": "vision_board"
+		},
+		"DS_SQL_ADLS_properties_typeProperties_url": {
+			"value": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"DS_SQL_ADLSS_properties_typeProperties_url": {
+			"value": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"DS_STORED_PROCEDURE_properties_typeProperties_server": {
+			"value": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"DS_STORED_PROCEDURE_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"DS_STORED_PROCEDURE_properties_typeProperties_userName": {
+			"value": "vision_board"
+		},
+		"LS_CPY_SQL_ADLS_properties_typeProperties_server": {
+			"value": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"LS_CPY_SQL_ADLS_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"LS_CPY_SQL_ADLS_properties_typeProperties_userName": {
+			"value": "vision_board"
+		},
+		"LS_DS_DES_properties_typeProperties_url": {
+			"value": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"LS_DS_DES_CSV_properties_typeProperties_url": {
+			"value": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"LS_DS_PYMUL_properties_typeProperties_url": {
+			"value": "https://srcdevadls.dfs.core.windows.net/"
+		},
+		"LS_DS_SRC_CSV_properties_typeProperties_url": {
+			"value": "https://srcdevadls.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_ADLS_properties_typeProperties_url": {
+			"value": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVERR_properties_typeProperties_server": {
+			"value": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"LS_SQLSERVERR_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"LS_SQLSERVERR_properties_typeProperties_userName": {
+			"value": "vision_board"
+		}
+	}
+}

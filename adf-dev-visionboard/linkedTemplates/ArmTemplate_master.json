@@ -1,0 +1,279 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-dev-visionboard"
+		},
+		"DS_OUTPUT_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DS_OUTPUT'"
+		},
+		"DS_SQL_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_SQL_ADLS'"
+		},
+		"DS_SQL_ADLSS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_SQL_ADLSS'"
+		},
+		"DS_STORED_PROCEDURE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DS_STORED_PROCEDURE'"
+		},
+		"LS_CPY_SQL_ADLS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_CPY_SQL_ADLS'"
+		},
+		"LS_DEL_LOGS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_DEL_LOGS'"
+		},
+		"LS_DS_DES_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_DS_DES'"
+		},
+		"LS_DS_DES_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_DS_DES_CSV'"
+		},
+		"LS_DS_PYMUL_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_DS_PYMUL'"
+		},
+		"LS_DS_SRC_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_DS_SRC_CSV'"
+		},
+		"LS_RESTAPI_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_RESTAPI_ADLS'"
+		},
+		"LS_SQLSERVERR_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVERR'"
+		},
+		"DS_OUTPUT_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"DS_OUTPUT_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2025"
+		},
+		"DS_OUTPUT_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "vision_board"
+		},
+		"DS_SQL_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"DS_SQL_ADLSS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"DS_STORED_PROCEDURE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"DS_STORED_PROCEDURE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2025"
+		},
+		"DS_STORED_PROCEDURE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "vision_board"
+		},
+		"LS_CPY_SQL_ADLS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"LS_CPY_SQL_ADLS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2025"
+		},
+		"LS_CPY_SQL_ADLS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "vision_board"
+		},
+		"LS_DS_DES_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"LS_DS_DES_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"LS_DS_PYMUL_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://srcdevadls.dfs.core.windows.net/"
+		},
+		"LS_DS_SRC_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://srcdevadls.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://desdevadls.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVERR_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"LS_SQLSERVERR_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2025"
+		},
+		"LS_SQLSERVERR_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "vision_board"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-dev-visionboard_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"DS_SQL_ADLS_accountKey": {
+						"value": "[parameters('DS_SQL_ADLS_accountKey')]"
+					},
+					"DS_SQL_ADLSS_accountKey": {
+						"value": "[parameters('DS_SQL_ADLSS_accountKey')]"
+					},
+					"LS_DEL_LOGS_connectionString": {
+						"value": "[parameters('LS_DEL_LOGS_connectionString')]"
+					},
+					"LS_DS_DES_accountKey": {
+						"value": "[parameters('LS_DS_DES_accountKey')]"
+					},
+					"LS_DS_DES_CSV_accountKey": {
+						"value": "[parameters('LS_DS_DES_CSV_accountKey')]"
+					},
+					"LS_DS_PYMUL_accountKey": {
+						"value": "[parameters('LS_DS_PYMUL_accountKey')]"
+					},
+					"LS_DS_SRC_CSV_accountKey": {
+						"value": "[parameters('LS_DS_SRC_CSV_accountKey')]"
+					},
+					"LS_RESTAPI_ADLS_accountKey": {
+						"value": "[parameters('LS_RESTAPI_ADLS_accountKey')]"
+					},
+					"DS_OUTPUT_password": {
+						"value": "[parameters('DS_OUTPUT_password')]"
+					},
+					"DS_STORED_PROCEDURE_password": {
+						"value": "[parameters('DS_STORED_PROCEDURE_password')]"
+					},
+					"LS_CPY_SQL_ADLS_password": {
+						"value": "[parameters('LS_CPY_SQL_ADLS_password')]"
+					},
+					"LS_SQLSERVERR_password": {
+						"value": "[parameters('LS_SQLSERVERR_password')]"
+					},
+					"DS_SQL_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('DS_SQL_ADLS_properties_typeProperties_url')]"
+					},
+					"DS_SQL_ADLSS_properties_typeProperties_url": {
+						"value": "[parameters('DS_SQL_ADLSS_properties_typeProperties_url')]"
+					},
+					"LS_DS_DES_properties_typeProperties_url": {
+						"value": "[parameters('LS_DS_DES_properties_typeProperties_url')]"
+					},
+					"LS_DS_DES_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_DS_DES_CSV_properties_typeProperties_url')]"
+					},
+					"LS_DS_PYMUL_properties_typeProperties_url": {
+						"value": "[parameters('LS_DS_PYMUL_properties_typeProperties_url')]"
+					},
+					"LS_DS_SRC_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_DS_SRC_CSV_properties_typeProperties_url')]"
+					},
+					"LS_RESTAPI_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_RESTAPI_ADLS_properties_typeProperties_url')]"
+					},
+					"DS_OUTPUT_properties_typeProperties_server": {
+						"value": "[parameters('DS_OUTPUT_properties_typeProperties_server')]"
+					},
+					"DS_OUTPUT_properties_typeProperties_database": {
+						"value": "[parameters('DS_OUTPUT_properties_typeProperties_database')]"
+					},
+					"DS_OUTPUT_properties_typeProperties_userName": {
+						"value": "[parameters('DS_OUTPUT_properties_typeProperties_userName')]"
+					},
+					"DS_STORED_PROCEDURE_properties_typeProperties_server": {
+						"value": "[parameters('DS_STORED_PROCEDURE_properties_typeProperties_server')]"
+					},
+					"DS_STORED_PROCEDURE_properties_typeProperties_database": {
+						"value": "[parameters('DS_STORED_PROCEDURE_properties_typeProperties_database')]"
+					},
+					"DS_STORED_PROCEDURE_properties_typeProperties_userName": {
+						"value": "[parameters('DS_STORED_PROCEDURE_properties_typeProperties_userName')]"
+					},
+					"LS_CPY_SQL_ADLS_properties_typeProperties_server": {
+						"value": "[parameters('LS_CPY_SQL_ADLS_properties_typeProperties_server')]"
+					},
+					"LS_CPY_SQL_ADLS_properties_typeProperties_database": {
+						"value": "[parameters('LS_CPY_SQL_ADLS_properties_typeProperties_database')]"
+					},
+					"LS_CPY_SQL_ADLS_properties_typeProperties_userName": {
+						"value": "[parameters('LS_CPY_SQL_ADLS_properties_typeProperties_userName')]"
+					},
+					"LS_SQLSERVERR_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVERR_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVERR_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVERR_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVERR_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVERR_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adf-dev-visionboard_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-dev-visionboard_ArmTemplate_0')]"
+			]
+		}
+	]
+}
