@@ -1,0 +1,20 @@
+{
+	"name": "DES_MUL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DS_DES",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "outputmultiple"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

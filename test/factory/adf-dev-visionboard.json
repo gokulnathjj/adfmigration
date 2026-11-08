@@ -1,0 +1,15 @@
+{
+	"name": "adf-dev-visionboard",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0c1f9ad6-b310-4c20-9868-161def8948d6",
+		"tenantId": "2f1e4589-bf0f-4e36-ac7a-6cee440b0821"
+	}
+}
