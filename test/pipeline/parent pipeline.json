@@ -60,6 +60,22 @@
 								},
 								"waitOnCompletion": true
 							}
+						},
+						{
+							"name": "Execute Pipeline1_copy1",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "child pipeline incremental",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
+							}
 						}
 					]
 				}
