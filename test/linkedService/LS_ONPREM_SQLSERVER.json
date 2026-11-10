@@ -2,17 +2,6 @@
 	"name": "LS_ONPREM_SQLSERVER",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
-		"parameters": {
-			"TableSchema": {
-				"type": "string"
-			},
-			"TableName": {
-				"type": "string"
-			},
-			"WatermarkColumn": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "SqlServer",
 		"typeProperties": {
@@ -22,7 +11,7 @@
 			"trustServerCertificate": true,
 			"authenticationType": "SQL",
 			"userName": "vision_board",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1YTM3MWRmNy01NGQzLTQwOWQtYjc1Yi01ZGY2ZDNhZGUwOGYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhN2IzZTczMi0yMGQxLTQzZWItYjVhMS05YTVhZDRhODM5NTgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
