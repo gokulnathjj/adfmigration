@@ -254,16 +254,16 @@
 						"typeProperties": {
 							"storedProcedureName": "[[dbo].[UpdateWatermark]",
 							"storedProcedureParameters": {
-								"TableSchema": {
+								"TableName": {
 									"value": {
-										"value": "@pipeline().parameters.TableSchema",
+										"value": "@pipeline().parameters.TableName",
 										"type": "Expression"
 									},
 									"type": "String"
 								},
-								"TableName": {
+								"TableSchema": {
 									"value": {
-										"value": "@pipeline().parameters.TableName",
+										"value": "@pipeline().parameters.TableSchema",
 										"type": "Expression"
 									},
 									"type": "String"
@@ -293,7 +293,7 @@
 					"TableSchema": {
 						"type": "string"
 					},
-					"WaterMarkColumn": {
+					"WatermarkColumn": {
 						"type": "string"
 					}
 				},
@@ -801,7 +801,7 @@
 							"source": {
 								"type": "SqlServerSource",
 								"sqlReaderQuery": {
-									"value": "SELECT MAX(@{pipeline().parameters.WatermarkColumn}) AS MaxValue\nFROM @{pipeline().parameters.TableSchema}.@{pipeline().parameters.TableName}\n",
+									"value": "@concat(\n'SELECT MAX([',pipeline().parameters.WatermarkColumn,\n']) AS MaxValue FROM [',pipeline().parameters.TableSchema,\n'].[',pipeline().parameters.TableName,']'\n)",
 									"type": "Expression"
 								},
 								"queryTimeout": "02:00:00",
@@ -1039,7 +1039,7 @@
 												"type": "Expression"
 											},
 											"LastLoadValue": {
-												"value": "@item().LastLoadValue",
+												"value": "@string(item().LastLoadValue)",
 												"type": "Expression"
 											}
 										}
