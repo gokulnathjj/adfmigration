@@ -63,7 +63,7 @@
 			"TableSchema": {
 				"type": "string"
 			},
-			"WaterMarkColumn": {
+			"WatermarkColumn": {
 				"type": "string"
 			}
 		},
