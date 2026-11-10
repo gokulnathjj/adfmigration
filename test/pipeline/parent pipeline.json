@@ -24,7 +24,8 @@
 					"dataset": {
 						"referenceName": "DS_LKUP_SQL_WTR_MARK",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
