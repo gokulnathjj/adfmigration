@@ -102,7 +102,17 @@
 							"inputs": [
 								{
 									"referenceName": "DS_LKUP_MAX_VALUE",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"ShemaName": {
+											"value": "@pipeline().parameters.TableSchema",
+											"type": "Expression"
+										},
+										"Tablename": {
+											"value": "@pipeline().parameters.TableName",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
