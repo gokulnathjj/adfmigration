@@ -35,8 +35,11 @@
 							"value": "@pipeline().parameters.TableSchema",
 							"type": "String"
 						},
-						"WatermarkColumn": {
-							"value": "@pipeline().parameters.WatermarkColumn",
+						"WaterMarkColumn": {
+							"value": {
+								"value": "@pipeline().parameters.WaterMarkColumn",
+								"type": "Expression"
+							},
 							"type": "String"
 						}
 					}
