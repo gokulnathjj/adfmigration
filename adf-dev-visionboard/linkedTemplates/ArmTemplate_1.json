@@ -609,16 +609,24 @@
 					"referenceName": "LS_LKUP_MAX_VALUE",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"ShemaName": {
+						"type": "String"
+					},
+					"Tablename": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "SqlServerTable",
 				"schema": [],
 				"typeProperties": {
 					"schema": {
-						"value": "@DATASE",
+						"value": "@dataset().shemaName",
 						"type": "Expression"
 					},
 					"table": {
-						"value": "@dataset",
+						"value": "@dataset().Tablename",
 						"type": "Expression"
 					}
 				}
@@ -802,7 +810,16 @@
 							"dataset": {
 								"referenceName": "DS_LKUP_MAX_VALUE",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"ShemaName": {
+										"value": "@pipeline().parameters.TableSchema",
+										"type": "Expression"
+									},
+									"Tablename": {
+										"value": "@pipeline().parameters.TableName",
+										"type": "Expression"
+									}
+								}
 							}
 						}
 					},
@@ -869,7 +886,16 @@
 										{
 											"referenceName": "DS_LKUP_MAX_VALUE",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"ShemaName": {
+													"value": "@pipeline().parameters.TableSchema",
+													"type": "Expression"
+												},
+												"Tablename": {
+													"value": "@pipeline().parameters.TableName",
+													"type": "Expression"
+												}
+											}
 										}
 									],
 									"outputs": [
@@ -915,20 +941,16 @@
 				},
 				"parameters": {
 					"TableSchema": {
-						"type": "string",
-						"defaultValue": "@item().TableSchema"
+						"type": "string"
 					},
 					"TableName": {
-						"type": "string",
-						"defaultValue": "@item().TableName"
+						"type": "string"
 					},
 					"WatermarkColumn": {
-						"type": "string",
-						"defaultValue": "@item().WatermarkColumn"
+						"type": "string"
 					},
 					"LastLoadValue": {
-						"type": "string",
-						"defaultValue": "@item().LastLoadValue"
+						"type": "string"
 					}
 				},
 				"annotations": []
@@ -990,6 +1012,23 @@
 							"activities": [
 								{
 									"name": "Execute Pipeline1",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "child pipeline incremental",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {}
+									}
+								},
+								{
+									"name": "Execute Pipeline1_copy1",
 									"type": "ExecutePipeline",
 									"dependsOn": [],
 									"policy": {
