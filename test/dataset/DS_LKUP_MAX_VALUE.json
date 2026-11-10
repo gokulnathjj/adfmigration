@@ -21,7 +21,10 @@
 				"value": "@dataset().shemaname",
 				"type": "Expression"
 			},
-			"table": "@datasse"
+			"table": {
+				"value": "@datasse",
+				"type": "Expression"
+			}
 		}
 	}
 }
