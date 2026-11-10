@@ -42,7 +42,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('LKUP_SQL_WTR_MARK').output.VALUE",
+						"value": "@activity('LKUP_SQL_WTR_MARK').output.value",
 						"type": "Expression"
 					},
 					"activities": [
