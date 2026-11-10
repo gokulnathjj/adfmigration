@@ -5,12 +5,23 @@
 			"referenceName": "LS_LKUP_MAX_VALUE",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Shemaname": {
+				"type": "String"
+			},
+			"Tablename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "@DATASE",
-			"table": "@dataset"
+			"schema": {
+				"value": "@dataset().shemaname",
+				"type": "Expression"
+			},
+			"table": "@datasse"
 		}
 	}
 }
