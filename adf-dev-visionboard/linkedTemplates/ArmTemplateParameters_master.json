@@ -35,11 +35,29 @@
 		"LS_DS_SRC_CSV_accountKey": {
 			"value": ""
 		},
+		"LS_LKUP_MAX_VALUE_password": {
+			"value": ""
+		},
+		"LS_LKUP_SQL_WTR_MARK_password": {
+			"value": ""
+		},
+		"LS_ONPREM_SQLSERVER_password": {
+			"value": ""
+		},
 		"LS_RESTAPI_ADLS_accountKey": {
 			"value": ""
 		},
 		"LS_SQLSERVERR_password": {
 			"value": ""
+		},
+		"LS_SQLTABLE_PARQUET_accountKey": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://kvsrcdevadls.vault.azure.net/"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"value": "https://kvsrcdevadls.vault.azure.net/"
 		},
 		"DS_OUTPUT_properties_typeProperties_server": {
 			"value": "DESKTOP-6058FOJ\\SQLEXPRESS"
@@ -86,6 +104,33 @@
 		"LS_DS_SRC_CSV_properties_typeProperties_url": {
 			"value": "https://srcdevadls.dfs.core.windows.net/"
 		},
+		"LS_LKUP_MAX_VALUE_properties_typeProperties_server": {
+			"value": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"LS_LKUP_MAX_VALUE_properties_typeProperties_database": {
+			"value": "SQLMIGRATION"
+		},
+		"LS_LKUP_MAX_VALUE_properties_typeProperties_userName": {
+			"value": "vision_board"
+		},
+		"LS_LKUP_SQL_WTR_MARK_properties_typeProperties_server": {
+			"value": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"LS_LKUP_SQL_WTR_MARK_properties_typeProperties_database": {
+			"value": "sqlmigration"
+		},
+		"LS_LKUP_SQL_WTR_MARK_properties_typeProperties_userName": {
+			"value": "vision_board"
+		},
+		"LS_ONPREM_SQLSERVER_properties_typeProperties_server": {
+			"value": "DESKTOP-6058FOJ\\SQLEXPRESS"
+		},
+		"LS_ONPREM_SQLSERVER_properties_typeProperties_database": {
+			"value": "sqlmigration"
+		},
+		"LS_ONPREM_SQLSERVER_properties_typeProperties_userName": {
+			"value": "vision_board"
+		},
 		"LS_RESTAPI_ADLS_properties_typeProperties_url": {
 			"value": "https://desdevadls.dfs.core.windows.net/"
 		},
@@ -97,6 +142,9 @@
 		},
 		"LS_SQLSERVERR_properties_typeProperties_userName": {
 			"value": "vision_board"
+		},
+		"LS_SQLTABLE_PARQUET_properties_typeProperties_url": {
+			"value": "https://desdevadls.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""
